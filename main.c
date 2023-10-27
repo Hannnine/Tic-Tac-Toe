@@ -8,6 +8,24 @@ void menu() {
 	printf("*****************************\n");
 }
 
+//游戏主函数
+void game() {
+	//定义容量
+	char GameBoard[ROW][COL] = { 0 };
+
+	//初始化棋盘
+	IniBoard(GameBoard);
+
+	//打印棋盘
+	ShowBoard(GameBoard);
+
+	//用户输入
+
+	//电脑输入
+
+	//结果判断
+}
+
 int main() {
 	int uipt;
 	do {
