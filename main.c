@@ -12,21 +12,24 @@ void menu() {
 void game() {
 	//定义容量
 	char GameBoard[ROW][COL] = { 0 };
+	char(*PoBoard)[COL] = GameBoard;	//此处定义一个一维指针
+	/*一维指针的作用：
+		创建了一个容量为[COL]的char类型指针并指向GameBoard的开头
+		每次希望调用GameBoard[i][j]时就可以用PoBoard[i][j]调用
+			此处[j]为[COL]而[i]是（* PoBoard+i ）*/
 
-	//初始化棋盘
-	IniBoard(GameBoard);
+			//初始化棋盘
+	IniBoard(PoBoard);
 
 	//打印棋盘
-	ShowBoard(GameBoard);
+	ShowBoard(PoBoard);
 
-	//用户输入
-
-	//电脑输入
-
-	//结果判断
+	//游戏循环
+	GameLoop(PoBoard);
 }
 
 int main() {
+	srand((unsigned int)time(NULL));
 	int uipt;
 	do {
 		menu();
